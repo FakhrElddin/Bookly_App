@@ -43,26 +43,5 @@ class HomeViewBody extends StatelessWidget {
         ),
       ],
     );
-    // return const Column(
-    //   crossAxisAlignment: CrossAxisAlignment.start,
-    //   children: [
-    //     CustomAppBar(),
-    //     FeaturedBooksListView(),
-    //     SizedBox(
-    //       height: 40,
-    //     ),
-    //     Padding(
-    //       padding: EdgeInsets.only(left: 30.0),
-    //       child: Text(
-    //         'Best Seller',
-    //         style: Styles.textStyle18,
-    //       ),
-    //     ),
-    //     SizedBox(
-    //       height: 20,
-    //     ),
-    //     BestSellerListView(),
-    //   ],
-    // );
   }
 }
