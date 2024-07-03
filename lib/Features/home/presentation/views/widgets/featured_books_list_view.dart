@@ -1,10 +1,10 @@
 import 'package:bookly/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookly/core/widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_error_widget.dart';
 import 'custom_book_item.dart';
+import 'featured_books_shimmer_list_view.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -35,14 +35,9 @@ class FeaturedBooksListView extends StatelessWidget {
               error: state.errorMessage,
             );
           } else {
-            return Center(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.3,
-                child: const AspectRatio(
-                  aspectRatio: 2.6 / 4,
-                  child: CustomLoadingIndicator(),
-                ),
-              ),
+            return SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: const FeaturedBooksShimmerListView(),
             );
           }
         },
