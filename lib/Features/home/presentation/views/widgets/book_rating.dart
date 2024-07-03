@@ -12,7 +12,7 @@ class BookRating extends StatelessWidget {
   });
 
   final MainAxisAlignment mainAxisAlignment;
-  final int ratingAverage;
+  final dynamic ratingAverage;
   final int ratingCount;
 
   @override

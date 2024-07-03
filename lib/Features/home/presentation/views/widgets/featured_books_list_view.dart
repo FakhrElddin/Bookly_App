@@ -22,7 +22,8 @@ class FeaturedBooksListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) => CustomBookImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                  imageUrl:
+                      state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
                   width: 16,
