@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../home/presentation/views/widgets/book_list_view_item.dart';
-
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
 
@@ -10,7 +8,8 @@ class SearchResultListView extends StatelessWidget {
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       sliver: SliverList.separated(
-        itemBuilder: (context, index) => const BookListViewItem(),
+        itemBuilder: (context, index) => Text('data'),
+        //const BookListViewItem(),
         separatorBuilder: (context, index) => const SizedBox(
           height: 20,
         ),

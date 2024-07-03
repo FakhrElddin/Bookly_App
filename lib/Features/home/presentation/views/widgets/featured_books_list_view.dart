@@ -35,7 +35,15 @@ class FeaturedBooksListView extends StatelessWidget {
               error: state.errorMessage,
             );
           } else {
-            return const CustomLoadingIndicator();
+            return Center(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: const AspectRatio(
+                  aspectRatio: 2.6 / 4,
+                  child: CustomLoadingIndicator(),
+                ),
+              ),
+            );
           }
         },
       ),
