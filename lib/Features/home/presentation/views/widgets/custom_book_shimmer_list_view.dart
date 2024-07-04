@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'featured_books_shimmer_item.dart';
 
-class FeaturedBooksShimmerListView extends StatelessWidget {
-  const FeaturedBooksShimmerListView({
+class CustomBookShimmerListView extends StatelessWidget {
+  const CustomBookShimmerListView({
     super.key,
   });
 
@@ -12,7 +12,7 @@ class FeaturedBooksShimmerListView extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      itemBuilder: (context, index) => const FeaturedBooksShimmerItem(),
+      itemBuilder: (context, index) => const CustomBookShimmerItem(),
       separatorBuilder: (context, index) => const SizedBox(
         width: 16,
       ),

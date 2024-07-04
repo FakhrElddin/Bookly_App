@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/widgets/custom_error_widget.dart';
 import 'custom_book_item.dart';
-import 'featured_books_shimmer_list_view.dart';
+import 'custom_book_shimmer_list_view.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -49,7 +49,7 @@ class FeaturedBooksListView extends StatelessWidget {
           } else {
             return SizedBox(
               height: MediaQuery.of(context).size.height * 0.3,
-              child: const FeaturedBooksShimmerListView(),
+              child: const CustomBookShimmerListView(),
             );
           }
         },
