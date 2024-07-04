@@ -3,7 +3,9 @@ import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:bookly/core/widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import 'custom_book_item.dart';
 
 class SimilarBooksListView extends StatelessWidget {
@@ -21,9 +23,18 @@ class SimilarBooksListView extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) => const CustomBookImage(
-                  imageUrl:
-                      'https://m.media-amazon.com/images/I/61d4098TmQL._SX342_SY445_.jpg',
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(
+                      AppRouter.kBookDetailsView,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: CustomBookImage(
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '',
+                  ),
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
                   width: 10,
