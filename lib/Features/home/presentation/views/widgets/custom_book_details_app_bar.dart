@@ -21,14 +21,14 @@ class CustomBookDetailsAppBar extends StatelessWidget {
               color: kIconsColor,
             ),
           ),
-          const Spacer(),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-              color: kIconsColor,
-            ),
-          ),
+          // const Spacer(),
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(
+          //     Icons.shopping_cart_outlined,
+          //     color: kIconsColor,
+          //   ),
+          // ),
         ],
       ),
     );
