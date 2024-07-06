@@ -2,13 +2,10 @@ import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/Features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/Features/home/presentation/views/home_view.dart';
-import 'package:bookly/Features/search/data/repos/search_repo.dart';
 import 'package:bookly/Features/search/data/repos/search_repo_impl.dart';
 import 'package:bookly/Features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:bookly/Features/search/presentation/views/search_view.dart';
-import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/core/utils/service_locator.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
