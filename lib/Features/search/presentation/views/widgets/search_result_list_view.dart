@@ -1,7 +1,6 @@
 import 'package:bookly/Features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:bookly/Features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:bookly/Features/search/presentation/views/widgets/no_books_widget.dart';
-import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,5 +43,3 @@ class SearchResultListView extends StatelessWidget {
     );
   }
 }
-
-
