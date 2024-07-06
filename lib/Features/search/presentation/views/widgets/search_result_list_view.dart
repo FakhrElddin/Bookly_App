@@ -28,22 +28,7 @@ class SearchResultListView extends StatelessWidget {
           );
         } else if (state is SearchFailure) {
           return const SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Icon(
-                  Icons.error_outline,
-                  size: 30,
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'There are no books with this name, try another name',
-                  style: Styles.textStyle18,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
+            child: NoBooksWidget(),
           );
         } else if (state is SearchLoading) {
           return const SliverToBoxAdapter(
@@ -55,6 +40,32 @@ class SearchResultListView extends StatelessWidget {
           );
         }
       },
+    );
+  }
+}
+
+class NoBooksWidget extends StatelessWidget {
+  const NoBooksWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Icon(
+          Icons.error_outline,
+          size: 30,
+        ),
+        SizedBox(
+          height: 12,
+        ),
+        Text(
+          'There are no books with this name, try another name',
+          style: Styles.textStyle18,
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }
