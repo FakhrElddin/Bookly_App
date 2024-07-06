@@ -4,12 +4,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key});
+  const CustomTextFormField(
+      {super.key, this.onPressedSearchIcon, this.controller, this.onFieldSubmitted});
 
+  final void Function()? onPressedSearchIcon;
+  final TextEditingController? controller;
+  final Function(String)? onFieldSubmitted;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+    
+      onFieldSubmitted: onFieldSubmitted,
       cursorColor: Colors.white,
+      controller: controller,
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(
           borderColor: Colors.grey,
@@ -19,7 +26,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintText: 'Search',
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: onPressedSearchIcon,
           icon: const Opacity(
             opacity: 0.8,
             child: Icon(
