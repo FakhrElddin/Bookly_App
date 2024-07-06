@@ -11,14 +11,12 @@ class NewestBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
+    return SliverPadding(
+      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+      sliver: BlocBuilder<NewestBooksCubit, NewestBooksState>(
         builder: (context, state) {
           if (state is NewestBooksSuccess) {
-            return ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
+            return SliverList.separated(
               itemBuilder: (context, index) => BookListViewItem(
                 bookModel: state.books[index],
               ),
@@ -28,7 +26,9 @@ class NewestBooksListView extends StatelessWidget {
               itemCount: state.books.length,
             );
           } else if (state is NewestBooksFailure) {
-            return CustomErrorWidget(error: state.errorMessage);
+            return SliverToBoxAdapter(
+              child: CustomErrorWidget(error: state.errorMessage),
+            );
           } else {
             return const NewestBooksShimmerListView();
           }

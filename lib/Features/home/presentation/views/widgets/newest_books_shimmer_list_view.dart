@@ -9,9 +9,7 @@ class NewestBooksShimmerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
+    return SliverList.separated(
       itemBuilder: (context, index) => const NewestBooksShimmerItem(),
       separatorBuilder: (context, index) => const SizedBox(
         height: 20,
