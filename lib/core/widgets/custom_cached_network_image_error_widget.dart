@@ -16,9 +16,13 @@ class CustomCachedNetworkImageErrorWidget extends StatelessWidget {
             Icons.error,
             size: 30,
           ),
-          Text(
-            'Image not found',
-            style: Styles.textStyle18,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              'No image',
+              style: Styles.textStyle18,
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
